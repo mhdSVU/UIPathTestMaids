@@ -1,0 +1,1157 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CreateDeleteAccount" this:CreateDeleteAccount.in_Usename="defaultName" this:CreateDeleteAccount.in_Address="DefaultAddress" this:CreateDeleteAccount.in_Country="-" this:CreateDeleteAccount.in_State="-" this:CreateDeleteAccount.in_City="-" this:CreateDeleteAccount.in_ZipCode="-" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Usename" Type="InArgument(x:String)" />
+    <x:Property Name="in_Email" Type="InArgument(x:String)" />
+    <x:Property Name="in_Gender" Type="InArgument(x:String)" />
+    <x:Property Name="in_Password" Type="InArgument(x:String)" />
+    <x:Property Name="in_Day" Type="InArgument(x:String)" />
+    <x:Property Name="in_Month" Type="InArgument(x:String)" />
+    <x:Property Name="in_Year" Type="InArgument(x:String)" />
+    <x:Property Name="in_FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="in_LastName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Company" Type="InArgument(x:String)" />
+    <x:Property Name="in_Address" Type="InArgument(x:String)" />
+    <x:Property Name="in_Country" Type="InArgument(x:String)" />
+    <x:Property Name="in_State" Type="InArgument(x:String)" />
+    <x:Property Name="in_City" Type="InArgument(x:String)" />
+    <x:Property Name="in_ZipCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_Phone" Type="InArgument(x:String)" />
+    <x:Property Name="in_URL_CreateDeleteAccount" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1239,8302</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CreateDeleteAccount_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CreateDeleteAccount" sap:VirtualizedContainerService.HintSize="648,8237" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="IsAccountCreated" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Automation Exercise" sap:VirtualizedContainerService.HintSize="586,8149" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,7909" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate 'DIV'" sap:VirtualizedContainerService.HintSize="490,139" sap2010:WorkflowViewState.IdRef="Activate_1">
+              <ui:Activate.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cb480da9-0bfd-4d51-b8ac-d88c197948ff" InformativeScreenshot="2a46673c0f611ac98ecd2c9c2f3a55ca" Selector="&lt;webctrl tag='DIV' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Activate.Target>
+            </ui:Activate>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,776" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Signup / Login'" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://automationexercise.com/" CVScreenId="d247c1c9-3e1a-4f72-a345-f962c8522ace" CvTextArea="807, 178, 90, 17" CvTextArgument="Signup / Login" CvType="Text" DesignTimeRectangle="793, 177, 103, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Signup / Login' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Signup / Login' check:innerText='Signup / Login' /&gt;" Guid="b2def34d-b0de-40ee-a680-caa781592477" InformativeScreenshot="af67552870f2efae21ba6d7345792f38.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,582" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,512" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Delete_Account - Invoke Workflow File (Delete_Account.xaml)" sap:VirtualizedContainerService.HintSize="354,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Delete_Account.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_URL_CreateDeleteAccount">https://automationexercise.com/</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Signup / Login'" sap:VirtualizedContainerService.HintSize="354,218" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://automationexercise.com/" CVScreenId="d247c1c9-3e1a-4f72-a345-f962c8522ace" CvTextArea="807, 178, 90, 17" CvTextArgument="Signup / Login" CvType="Text" DesignTimeRectangle="793, 177, 103, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Signup / Login' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Signup / Login' check:innerText='Signup / Login' /&gt;" Guid="b2def34d-b0de-40ee-a680-caa781592477" InformativeScreenshot="af67552870f2efae21ba6d7345792f38.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Usename]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/login" CVScreenId="c5345576-e848-4fa2-a564-f52773013639" CvElementArea="696, 450, 363, 42" CvType="InputBox" DesignTimeRectangle="698, 452, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' parentclass='signup-form' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' parentclass='signup-form' class='' placeholder='Name' aaname='' /&gt;" Guid="a2e32aef-74cb-4e1d-a03d-6bdd475befb9" InformativeScreenshot="9273fa09765a2e5889b005e7d7f3fdca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup / Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'mohammedyousersawwas@gm…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Email]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/login" CVScreenId="652cd9fd-7318-424b-aa2a-56c49451ee5c" CvElementArea="696, 500, 364, 43" CvType="InputBox" DesignTimeRectangle="698, 502, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='email' placeholder='Email Address' parentclass='signup-form' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' placeholder='Email Address' parentclass='signup-form' class='' aaname='' /&gt;" Guid="bc63e38a-940a-479a-a1b3-d67ea06734e8" InformativeScreenshot="9d186eb4f992bc43519612862322ebe6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup / Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Signup'" sap:VirtualizedContainerService.HintSize="490,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/login" DesignTimeRectangle="698, 500, 92, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Signup' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Signup' tag='BUTTON' type='submit' class='btn btn-default' check:innerText='Signup' /&gt;" Guid="54b8e7dc-848b-4143-9830-3939fda43b87" InformativeScreenshot="729fb122593edaea72c7eaf0f14f1af1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup / Login' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <If Condition="[in_Gender.Equals(&quot;Male&quot;)]" sap:VirtualizedContainerService.HintSize="490,778" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV uniform-id_gender1'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="230, 415, 20, 20" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl id='uniform-id_gender1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='uniform-id_gender1' tag='DIV' type='' class='radio' aaname='' /&gt;" Guid="84825030-3456-4045-beb1-34a4f2fc96af" InformativeScreenshot="593a688167e0fe8f9897017a6993471a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="307, 419, 15, 15" DesignTimeScaleFactor="1" ElementType="RadioButton" FullSelectorArgument="&lt;webctrl id='id_gender2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='id_gender2' tag='INPUT' type='radio' class='' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Mrs. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' /&gt;" Guid="d4f45df2-eeb6-4e87-960d-d04c8587ae13" InformativeScreenshot="5192cb1e0c585c6c62581944e8bd1af4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="307, 405, 52, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Mrs. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' class='top' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;Mrs. &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' class='top' tag='LABEL' type='' check:innerText='Mrs.' /&gt;" Guid="82d3bd82-c4cd-4c1e-bc59-8da83505f881" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NSetText DisplayName="Set Text 'Password *'" sap:VirtualizedContainerService.HintSize="490,194" sap2010:WorkflowViewState.IdRef="NSetText_3" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Password]" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 635, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='form-control' aaname='Password *' /&gt;" Guid="bab69b4c-f88a-4900-93b3-392dce8d4225" InformativeScreenshot="66e7f263dd20eb40e92f61ff000bc3d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="210, 610, 70, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Password ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Password ' tag='LABEL' type='' class='' check:innerText='Password *' /&gt;" Guid="1e8d72c4-e575-427d-ad3e-43766a6ffdd9" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Date of Birth'" sap:VirtualizedContainerService.HintSize="490,225" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="dc02107c-06b7-4c9d-bcb4-076057927b67" CvElementArea="207, 423, 86, 38" CvType="InputBox" DesignTimeRectangle="210, 425, 82, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='days' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='days' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="00ed2943-6c01-4300-8e6b-ec299e9e26b1" InformativeScreenshot="0cdb8ee36147487af03047dabc74a86a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="dc02107c-06b7-4c9d-bcb4-076057927b67" CvTextArea="209, 401, 81, 14" CvTextArgument="Date of Birth" CvType="Text" DesignTimeRectangle="210, 400, 79, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Date of Birth' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Date of Birth' tag='LABEL' type='' class='' check:innerText='Date of Birth' /&gt;" Guid="c39064fc-6aa2-435f-8f15-5bd84e852517" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NSelectItem DisplayName="Select Item 'Date of Birth'" sap:VirtualizedContainerService.HintSize="490,189" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_Day]" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Day</x:String>
+                  <x:String>1</x:String>
+                  <x:String>2</x:String>
+                  <x:String>3</x:String>
+                  <x:String>4</x:String>
+                  <x:String>5</x:String>
+                  <x:String>6</x:String>
+                  <x:String>7</x:String>
+                  <x:String>8</x:String>
+                  <x:String>9</x:String>
+                  <x:String>10</x:String>
+                  <x:String>11</x:String>
+                  <x:String>12</x:String>
+                  <x:String>13</x:String>
+                  <x:String>14</x:String>
+                  <x:String>15</x:String>
+                  <x:String>16</x:String>
+                  <x:String>17</x:String>
+                  <x:String>18</x:String>
+                  <x:String>19</x:String>
+                  <x:String>20</x:String>
+                  <x:String>21</x:String>
+                  <x:String>22</x:String>
+                  <x:String>23</x:String>
+                  <x:String>24</x:String>
+                  <x:String>25</x:String>
+                  <x:String>26</x:String>
+                  <x:String>27</x:String>
+                  <x:String>28</x:String>
+                  <x:String>29</x:String>
+                  <x:String>30</x:String>
+                  <x:String>31</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 508, 82, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='days' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='days' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="c6f55fe0-8fc3-4938-b193-6c4e5e3557f3" InformativeScreenshot="e68b310fa4a100b4e3e814f0da1a3ceb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="210, 483, 79, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Date of Birth' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Date of Birth' tag='LABEL' type='' class='' check:innerText='Date of Birth' /&gt;" Guid="b4c276ad-da12-448c-962d-ae2c80d385d2" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Month'" sap:VirtualizedContainerService.HintSize="490,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="cc1cb049-c22a-46aa-b9c0-ee470e9f28cb" CvElementArea="338, 424, 91, 37" CvType="InputBox" DesignTimeRectangle="340, 425, 88, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='months' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='months' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="2508aa09-f4b5-4e06-9be9-f0a409664d8c" InformativeScreenshot="ea5ae9274f0ab9b46944498ddf5285fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NSelectItem DisplayName="Select Item 'Month'" sap:VirtualizedContainerService.HintSize="490,189" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_Month]" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="13">
+                  <x:String>Month</x:String>
+                  <x:String>January</x:String>
+                  <x:String>February</x:String>
+                  <x:String>March</x:String>
+                  <x:String>April</x:String>
+                  <x:String>May</x:String>
+                  <x:String>June</x:String>
+                  <x:String>July</x:String>
+                  <x:String>August</x:String>
+                  <x:String>September</x:String>
+                  <x:String>October</x:String>
+                  <x:String>November</x:String>
+                  <x:String>December</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="340, 508, 88, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='months' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='months' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="453960dd-ea6f-4d5e-83bd-d7f3f931b148" InformativeScreenshot="428dae3b2ad1e50667f5258af7598406.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Year'" sap:VirtualizedContainerService.HintSize="490,225" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="42abe6fb-9404-4c12-9ff9-7ef0a6a97d09" CvElementArea="468, 424, 85, 37" CvType="InputBox" DesignTimeRectangle="470, 425, 82, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='years' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='years' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="99b31f91-082e-402d-9e94-01ece3d549df" InformativeScreenshot="b6815aa5d86799a3e3bda6f7b5162f98.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NSelectItem DisplayName="Select Item 'Year'" sap:VirtualizedContainerService.HintSize="490,189" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[in_Year]" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="50">
+                  <x:String>Year</x:String>
+                  <x:String>2021</x:String>
+                  <x:String>2020</x:String>
+                  <x:String>2019</x:String>
+                  <x:String>2018</x:String>
+                  <x:String>2017</x:String>
+                  <x:String>2016</x:String>
+                  <x:String>2015</x:String>
+                  <x:String>2014</x:String>
+                  <x:String>2013</x:String>
+                  <x:String>2012</x:String>
+                  <x:String>2011</x:String>
+                  <x:String>2010</x:String>
+                  <x:String>2009</x:String>
+                  <x:String>2008</x:String>
+                  <x:String>2007</x:String>
+                  <x:String>2006</x:String>
+                  <x:String>2005</x:String>
+                  <x:String>2004</x:String>
+                  <x:String>2003</x:String>
+                  <x:String>2002</x:String>
+                  <x:String>2001</x:String>
+                  <x:String>2000</x:String>
+                  <x:String>1999</x:String>
+                  <x:String>1998</x:String>
+                  <x:String>1997</x:String>
+                  <x:String>1996</x:String>
+                  <x:String>1995</x:String>
+                  <x:String>1994</x:String>
+                  <x:String>1993</x:String>
+                  <x:String>1992</x:String>
+                  <x:String>1991</x:String>
+                  <x:String>1990</x:String>
+                  <x:String>1989</x:String>
+                  <x:String>1988</x:String>
+                  <x:String>1987</x:String>
+                  <x:String>1986</x:String>
+                  <x:String>1985</x:String>
+                  <x:String>1984</x:String>
+                  <x:String>1983</x:String>
+                  <x:String>1982</x:String>
+                  <x:String>1981</x:String>
+                  <x:String>1980</x:String>
+                  <x:String>1979</x:String>
+                  <x:String>1978</x:String>
+                  <x:String>1977</x:String>
+                  <x:String>1976</x:String>
+                  <x:String>1975</x:String>
+                  <x:String>1974</x:String>
+                  <x:String>1973</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="470, 508, 82, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='years' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='years' tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="2c884197-af99-4c46-8c28-29c6f600f106" InformativeScreenshot="faae4ac8b98d64560f1c5509aa8708e6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NSetText DisplayName="Set Text 'First name *'" sap:VirtualizedContainerService.HintSize="490,194" sap2010:WorkflowViewState.IdRef="NSetText_4" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_FirstName]" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 303, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='first_name' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='first_name' tag='INPUT' type='text' class='form-control' aaname='First name *' /&gt;" Guid="d2fed4d4-fa26-4ba9-8cdf-b16dd85239dc" InformativeScreenshot="30fbbb573f8da8affc0e6c1517af669d.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="210, 278, 75, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='First name ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='First name ' tag='LABEL' type='' class='' check:innerText='First name *' /&gt;" Guid="f626c5f3-c5c7-4d1d-83e4-d4423ed7f04c" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NSetText DisplayName="Set Text 'Last name *'" sap:VirtualizedContainerService.HintSize="490,194" sap2010:WorkflowViewState.IdRef="NSetText_5" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_LastName]" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 383, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='last_name' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='last_name' tag='INPUT' type='text' class='form-control' aaname='Last name *' /&gt;" Guid="b6b8027f-dee5-400b-9121-dc5c744bd250" InformativeScreenshot="0dfc1a5d10960fe5a506fdf4bfd147d5.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="210, 358, 74, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Last name ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Last name ' tag='LABEL' type='' class='' check:innerText='Last name *' /&gt;" Guid="3da5ec37-6e4e-4fcf-9a56-2df93aa97a5e" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NSetText DisplayName="Set Text 'Company'" sap:VirtualizedContainerService.HintSize="490,194" sap2010:WorkflowViewState.IdRef="NSetText_6" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Company]" Version="V3">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 463, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='company' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='company' tag='INPUT' type='text' class='form-control' aaname='Company' /&gt;" Guid="4eb9ab5b-c502-4b7f-abd5-2d746af93f20" InformativeScreenshot="4d81206c22cfbe9e57a9391b7a895bf9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="210, 438, 59, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Company' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Company' tag='LABEL' type='' class='' check:innerText='Company' /&gt;" Guid="85ff972f-d640-4739-afd7-288a2c213e5d" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'Address *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Address]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="c201ecdf-62d8-4552-91df-b50e1b69a7a7" CvElementArea="208, 425, 363, 44" CvType="InputBox" DesignTimeRectangle="210, 428, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='address1' tag='INPUT' aaname='Address * (Street address, P.O. Box, Company name, etc.)' /&gt;" FuzzySelectorArgument="&lt;webctrl id='address1' tag='INPUT' aaname='Address * (Street address, P.O. Box, Company name, etc.)' type='text' class='form-control' /&gt;" Guid="007f676d-efcf-4a75-bde8-bcd0ee663be9" InformativeScreenshot="3a1b296c2389019aeccfab3ced1f682c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="c201ecdf-62d8-4552-91df-b50e1b69a7a7" CvTextArea="208, 402, 360, 17" CvTextArgument="Address (Street address, P.O. Box, Company name, etc.)" CvType="Text" DesignTimeRectangle="210, 398, 358, 25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Address ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Address ' tag='LABEL' type='' class='' check:innerText='Address * (Street address, P.O. Box, Company name, etc.)' /&gt;" Guid="907bb566-c891-4845-b9fe-00c2cd34bf50" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="490,511" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="5.00:00:00">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,304" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Country *'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="5b0de2d6-6d01-4cb4-92d8-eeade2abed96" CvElementArea="208, 225, 363, 37" CvType="InputBox" DesignTimeRectangle="210, 227, 360, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='country' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='country' tag='SELECT' type='' class='form-control' aaname='Country * ' /&gt;" Guid="4913574e-32af-41fd-acc2-2ad9b8f8c8d3" InformativeScreenshot="8c9692d44efc2fc3fa3dca072dd5bb02.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="5b0de2d6-6d01-4cb4-92d8-eeade2abed96" CvTextArea="209, 201, 60, 19" CvTextArgument="Country *" CvType="Text" DesignTimeRectangle="210, 202, 58, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Country ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Country ' tag='LABEL' type='' class='' check:innerText='Country *' /&gt;" Guid="acaf7795-80ed-4a5f-a49b-6b12a62c9836" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,926" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Variables>
+                <Variable x:TypeArguments="s:Exception" Default="[new System.SystemException(&quot;InvalidCountry&quot;)]" Name="err_InvalidCountry" />
+              </TryCatch.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <uix:NSelectItem DisplayName="Select Item 'Country *'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[in_Country]" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                  <uix:NSelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="7">
+                      <x:String>India</x:String>
+                      <x:String>United States</x:String>
+                      <x:String>Canada</x:String>
+                      <x:String>Australia</x:String>
+                      <x:String>Israel</x:String>
+                      <x:String>New Zealand</x:String>
+                      <x:String>Singapore</x:String>
+                    </scg:List>
+                  </uix:NSelectItem.Items>
+                  <uix:NSelectItem.Target>
+                    <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 267, 360, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='country' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='country' tag='SELECT' type='' class='form-control' aaname='Country * ' /&gt;" Guid="63e74932-b9f4-44ae-b2d1-6b4cb436322d" InformativeScreenshot="ee799c016abe303a0c1c12a3572caa64.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="210, 242, 58, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Country ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Country ' tag='LABEL' type='' class='' check:innerText='Country *' /&gt;" Guid="a40c30f0-6cec-466e-9282-5bc569a3855d" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NSelectItem.Target>
+                </uix:NSelectItem>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,732" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="InvalidCountry" />
+                    </ActivityAction.Argument>
+                    <If Condition="[in_Country.Equals(&quot;New Zealand&quot;)]" sap:VirtualizedContainerService.HintSize="450,662" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Ignore the error since the Account hass been ceated successfully!" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,323" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="Account hass not been ceated! so throw an exception" />
+                          <Throw Exception="[err_InvalidCountry]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[IsAccountCreated]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </TryCatch.Finally>
+            </TryCatch>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'State *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_State]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="0e99ac26-e044-4ca6-af8b-7ba80454d2b0" CvElementArea="207, 449, 365, 44" CvType="InputBox" DesignTimeRectangle="210, 451, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='state' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='state' tag='INPUT' type='text' class='form-control' aaname='State * ' /&gt;" Guid="a6176d5a-0830-4fc8-a028-b7571138e631" InformativeScreenshot="68547c1a94c07d41c2b97081455c38c4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="0e99ac26-e044-4ca6-af8b-7ba80454d2b0" CvTextArea="209, 425, 43, 16" CvTextArgument="State *" CvType="Text" DesignTimeRectangle="210, 426, 41, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='State ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='State ' tag='LABEL' type='' class='' check:innerText='State *' /&gt;" Guid="929b9d62-7466-46c0-a52e-5a322cb8b36a" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'City *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_City]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="2966a455-88b7-43ea-9b51-65a092668bd6" CvElementArea="207, 529, 364, 44" CvType="InputBox" DesignTimeRectangle="210, 531, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='city' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='city' tag='INPUT' type='text' class='form-control' aaname='City * ' /&gt;" Guid="4cac2756-6e87-41b4-aee1-c17ebee803b7" InformativeScreenshot="42718c90a72ff39a4a4ca198a06bdbb3.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="2966a455-88b7-43ea-9b51-65a092668bd6" CvTextArea="209, 505, 35, 19" CvTextArgument="City *" CvType="Text" DesignTimeRectangle="210, 506, 33, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='City ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='City ' tag='LABEL' type='' class='' check:innerText='City *' /&gt;" Guid="8bfc3052-fb5f-446a-a9e4-0616d6848ce5" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'Zipcode *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_ZipCode]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="48ca1a88-d85d-4e79-a3c5-c3f9afd307fb" CvElementArea="207, 609, 364, 44" CvType="InputBox" DesignTimeRectangle="210, 611, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='zipcode' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='zipcode' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="93d6cfdc-235f-4482-a074-43457e752a43" InformativeScreenshot="2dbca21813dd84b943921249f5c3cd65.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="48ca1a88-d85d-4e79-a3c5-c3f9afd307fb" CvTextArea="209, 585, 61, 19" CvTextArgument="Zipcode *" CvType="Text" DesignTimeRectangle="210, 586, 59, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Zipcode ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zipcode ' tag='LABEL' type='' class='' check:innerText='Zipcode *' /&gt;" Guid="b143a016-6014-44d2-955b-48d99b13bf94" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="True" DisplayName="Type Into 'Mobile Number *'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="490,286" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Text="[in_Phone]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" CVScreenId="69a68ade-d618-48fd-8209-f756b6f79634" CvElementArea="208, 689, 364, 44" CvType="InputBox" DesignTimeRectangle="210, 691, 360, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='mobile_number' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mobile_number' tag='INPUT' type='text' class='form-control' aaname='Mobile Number * ' /&gt;" Guid="2ee57e79-c9ee-442d-bdb0-80d070b20aee" InformativeScreenshot="114557a6dd72acebf3c6e2155a651b71.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="69a68ade-d618-48fd-8209-f756b6f79634" CvTextArea="209, 667, 99, 14" CvTextArgument="Mobile Number" CvType="Text" DesignTimeRectangle="210, 666, 105, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Mobile Number ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Mobile Number ' tag='LABEL' type='' class='' check:innerText='Mobile Number *' /&gt;" Guid="e9aad053-e0d7-4226-9025-b28f079a2337" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Create Account'" sap:VirtualizedContainerService.HintSize="490,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/signup" DesignTimeRectangle="210, 572, 146, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn btn-default' aaname='Create Account' check:innerText='Create Account' /&gt;" Guid="5d6a6bb8-e4ce-461d-b016-57a890c661f2" InformativeScreenshot="c40f8ebdc9908c11ead5b500caadaf3d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Signup' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="e150b85f-13d0-4c6a-babf-ce28bc3f46a9" DisplayName="CV Screen Scope 'DIV'" sap:VirtualizedContainerService.HintSize="490,57" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="IsAccountCreated" />
+                    </Sequence.Variables>
+                    <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text 'ACCOUNT CREATED!' (352,0,173,16)&quot;]" DesignTimeCacheId="e150b85f-13d0-4c6a-babf-ce28bc3f46a9" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="400,57" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="b49543c54ea303dcd95f152ed32094e6" NumberOfScrolls="2" Result="[IsAccountCreated]" ScrollDirection="None" Version="V6">
+                      <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="2659582d-e98a-4e81-b656-7c6f4bf5dc98">
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="352, 0, 173, 16" ElementType="Text" Text="ACCOUNT CREATED!" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:CvElementExistsWithDescriptor>
+                    <If Condition="[IsAccountCreated]" sap:VirtualizedContainerService.HintSize="400,48" sap2010:WorkflowViewState.IdRef="If_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Account hass been ceated successfully!" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Account hass not been ceated!" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DataSent="False" DisplayName="Screen CV Element Exists - 'AC (Main)" Id="e150b85f-13d0-4c6a-babf-ce28bc3f46a9" InformativeScreenshot="af2a1d34173a131ae103f14b26d26b20" LogicalPosition="187, 320" OcrText="ACCOUNT CREATED! Congratulations! Your new account has been successfully created! You can now take advantage of member privileges to enhance your online shopping experience with us. Continue" Position="187, 320" ScreenshotGuid="21469316-04dd-448e-af07-cd003b861cdc" ServerVersion="24.1.2.2">
+                        <uc:CVCache.CvAnchorRelations>
+                          <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                        </uc:CVCache.CvAnchorRelations>
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                            <uc:CvElementInfo Category="Button" Region="782, 142, 81, 33" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="875, 53, 3, 41" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="779, 136, 91, 39" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="875, 90, 3, 49" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="875, 25, 3, 51" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="0, 172, 23, 3" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="876, 4, 1, 55" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="874, 43, 4, 41" />
+                            <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="214, 172, 441, 3" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="27">
+                            <uc:OcrTextInfo Region="352, 0, 86, 16" Text="ACCOUNT" />
+                            <uc:OcrTextInfo Region="439, 0, 86, 16" Text="CREATED!" />
+                            <uc:OcrTextInfo Region="14, 55, 130, 21" Text="Congratulations!" />
+                            <uc:OcrTextInfo Region="147, 55, 41, 16" Text="Your" />
+                            <uc:OcrTextInfo Region="190, 60, 35, 11" Text="new" />
+                            <uc:OcrTextInfo Region="227, 57, 64, 14" Text="account" />
+                            <uc:OcrTextInfo Region="292, 55, 28, 16" Text="has" />
+                            <uc:OcrTextInfo Region="323, 55, 40, 16" Text="been" />
+                            <uc:OcrTextInfo Region="366, 55, 92, 20" Text="successfully" />
+                            <uc:OcrTextInfo Region="461, 55, 62, 16" Text="created!" />
+                            <uc:OcrTextInfo Region="13, 93, 35, 16" Text="You" />
+                            <uc:OcrTextInfo Region="51, 98, 28, 11" Text="can" />
+                            <uc:OcrTextInfo Region="82, 98, 36, 11" Text="now" />
+                            <uc:OcrTextInfo Region="121, 93, 33, 16" Text="take" />
+                            <uc:OcrTextInfo Region="157, 93, 79, 21" Text="advantage" />
+                            <uc:OcrTextInfo Region="239, 93, 21, 16" Text="of" />
+                            <uc:OcrTextInfo Region="263, 93, 67, 16" Text="member" />
+                            <uc:OcrTextInfo Region="332, 93, 76, 21" Text="privileges" />
+                            <uc:OcrTextInfo Region="410, 96, 19, 14" Text="to" />
+                            <uc:OcrTextInfo Region="432, 93, 66, 16" Text="enhance" />
+                            <uc:OcrTextInfo Region="500, 98, 38, 16" Text="your" />
+                            <uc:OcrTextInfo Region="540, 93, 51, 16" Text="online" />
+                            <uc:OcrTextInfo Region="594, 93, 74, 21" Text="shopping" />
+                            <uc:OcrTextInfo Region="670, 94, 84, 20" Text="experience" />
+                            <uc:OcrTextInfo Region="756, 93, 38, 17" Text="with" />
+                            <uc:OcrTextInfo Region="796, 97, 22, 12" Text="us." />
+                            <uc:OcrTextInfo Region="793, 150, 59, 14" Text="Continue" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4c86764c-037c-4e22-bfb8-0a8a0a7fd3f5" InformativeScreenshot="3fab3520488e3979c2fdad588cd9d0eb" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' parentid='form' tag='DIV' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:CVScope>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="490,57" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/account_created" DesignTimeRectangle="978, 471, 80, 32" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='form' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='A' type='' class='btn btn-primary' aaname='Continue' check:innerText='Continue' /&gt;" Guid="bd940b5e-7794-4285-87eb-08f65daba9de" InformativeScreenshot="4574401b92811b0edb0b13f375158549.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Account Created' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete Account'" sap:VirtualizedContainerService.HintSize="490,57" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://automationexercise.com/" DesignTimeRectangle="881, 125, 110, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname=' Delete Account' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Delete Account' tag='A' type='' class='' check:innerText='Delete Account' /&gt;" Guid="ab0df99a-877c-40a8-913a-8ad57ee0bed3" InformativeScreenshot="bce1f2fd4bf029c3d9d3bfca73b72afe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="a3f2d22c-1379-4d5f-a269-31c245d171f4" DisplayName="CV Screen Scope 'BODY'" sap:VirtualizedContainerService.HintSize="490,50" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+              <p:CVScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="isAccountDeleted" />
+                    </Sequence.Variables>
+                    <p:CvElementExistsWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: Text 'ACCOUNT DELETED!' (450,0,170,17)&quot;]" DesignTimeCacheId="a3f2d22c-1379-4d5f-a269-31c245d171f4" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="450,169" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="d4f264c9b8c4ca852be17abde75301a1" NumberOfScrolls="2" Result="[isAccountDeleted]" ScrollDirection="None" Version="V6">
+                      <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                        <uc:CvDescriptor Id="aa88980b-5abc-4e15-8e3a-61117f5005cc">
+                          <uc:CvDescriptor.Target>
+                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="450, 0, 170, 17" ElementType="Text" Text="ACCOUNT DELETED!" />
+                          </uc:CvDescriptor.Target>
+                        </uc:CvDescriptor>
+                      </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                    </p:CvElementExistsWithDescriptor>
+                    <If Condition="[isAccountDeleted]" sap:VirtualizedContainerService.HintSize="450,788" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,426" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Account hass been deleted successfully!" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="354,216" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f1ffe0aa-e2b9-48f8-a13c-ae82a7d0748c" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://automationexercise.com/delete_account" DesignTimeRectangle="978, 499, 80, 32" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='form' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='form' tag='A' type='' class='btn btn-primary' aaname='Continue' check:innerText='Continue' /&gt;" Guid="29570a75-bdb3-4664-b916-602988d193f9" InformativeScreenshot="10862c8fae896c1c79c994d33ee79d1d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Automation Exercise - Account Created' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Account hass not been deleted!" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </p:CVScope.Body>
+              <p:CVScope.DesignTimeCache>
+                <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" DataSent="False" />
+              </p:CVScope.DesignTimeCache>
+              <p:CVScope.DesignTimeCacheContainer>
+                <uc:CvCacheContainer>
+                  <uc:CvCacheContainer.Caches>
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+                      <uc:CVCache DataSent="False" DisplayName="Screen CV Element Exists - 'AC (Main)" Id="a3f2d22c-1379-4d5f-a269-31c245d171f4" InformativeScreenshot="74f92ccddc1ed88855a7e56a05077637" LogicalPosition="90, 320" OcrText="ACCOUNT DELETED! Your account has been permanently deleted! You can create new account to take advantage of member privileges to enhance your online shopping experience with us. Continue" Position="90, 320" ScreenshotGuid="3f8cc4f1-7c0e-46d4-830e-d48cad4ec14f" ServerVersion="24.1.2.2">
+                        <uc:CVCache.CvAnchorRelations>
+                          <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                            <uc:AnchorRelationInfo IsTargetText="True" Target="17">
+                              <uc:AnchorRelationInfo.Anchors>
+                                <x:Array Type="x:Int32">
+                                  <x:Int32>0</x:Int32>
+                                  <x:Int32>1</x:Int32>
+                                </x:Array>
+                              </uc:AnchorRelationInfo.Anchors>
+                            </uc:AnchorRelationInfo>
+                          </scg:List>
+                        </uc:CVCache.CvAnchorRelations>
+                        <uc:CVCache.CvUiElements>
+                          <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
+                            <uc:CvElementInfo Category="Button" Region="879, 169, 83, 34" />
+                            <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="879, 170, 83, 33" />
+                          </scg:List>
+                        </uc:CVCache.CvUiElements>
+                        <uc:CVCache.OcrTexts>
+                          <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="28">
+                            <uc:OcrTextInfo Region="450, 0, 86, 16" Text="ACCOUNT" />
+                            <uc:OcrTextInfo Region="538, 0, 82, 17" Text="DELETED!" />
+                            <uc:OcrTextInfo Region="110, 55, 42, 16" Text="Your" />
+                            <uc:OcrTextInfo Region="154, 58, 64, 13" Text="account" />
+                            <uc:OcrTextInfo Region="220, 55, 27, 16" Text="has" />
+                            <uc:OcrTextInfo Region="251, 55, 39, 16" Text="been" />
+                            <uc:OcrTextInfo Region="292, 55, 100, 20" Text="permanently" />
+                            <uc:OcrTextInfo Region="395, 55, 61, 16" Text="deleted!" />
+                            <uc:OcrTextInfo Region="110, 93, 35, 16" Text="You" />
+                            <uc:OcrTextInfo Region="148, 98, 28, 11" Text="can" />
+                            <uc:OcrTextInfo Region="179, 96, 48, 13" Text="create" />
+                            <uc:OcrTextInfo Region="229, 98, 35, 11" Text="new" />
+                            <uc:OcrTextInfo Region="267, 96, 63, 13" Text="account" />
+                            <uc:OcrTextInfo Region="332, 96, 18, 13" Text="to" />
+                            <uc:OcrTextInfo Region="354, 93, 33, 16" Text="take" />
+                            <uc:OcrTextInfo Region="390, 93, 79, 21" Text="advantage" />
+                            <uc:OcrTextInfo Region="472, 93, 21, 16" Text="of" />
+                            <uc:OcrTextInfo Region="496, 93, 67, 16" Text="member" />
+                            <uc:OcrTextInfo Region="564, 93, 76, 21" Text="privileges" />
+                            <uc:OcrTextInfo Region="643, 96, 18, 14" Text="to" />
+                            <uc:OcrTextInfo Region="664, 93, 67, 16" Text="enhance" />
+                            <uc:OcrTextInfo Region="732, 98, 39, 16" Text="your" />
+                            <uc:OcrTextInfo Region="773, 93, 50, 16" Text="online" />
+                            <uc:OcrTextInfo Region="827, 93, 74, 21" Text="shopping" />
+                            <uc:OcrTextInfo Region="111, 123, 84, 20" Text="experience" />
+                            <uc:OcrTextInfo Region="197, 122, 37, 16" Text="with" />
+                            <uc:OcrTextInfo Region="236, 126, 23, 12" Text="us." />
+                            <uc:OcrTextInfo Region="890, 178, 58, 14" Text="Continue" />
+                          </scg:List>
+                        </uc:CVCache.OcrTexts>
+                      </uc:CVCache>
+                    </scg:List>
+                  </uc:CvCacheContainer.Caches>
+                </uc:CvCacheContainer>
+              </p:CVScope.DesignTimeCacheContainer>
+              <p:CVScope.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                  <ActivityFunc.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument>
+                  <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                </ActivityFunc>
+              </p:CVScope.OCREngine>
+              <p:CVScope.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7c4b771c-31fb-440e-b3c9-feacc5a0ef33" InformativeScreenshot="2045a74a386aa47de510c381faf19dd3" Selector="&lt;webctrl class='row' parentid='form' tag='DIV' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </p:CVScope.Target>
+              <p:CVScope.UseLocalServer>
+                <InArgument x:TypeArguments="x:Boolean" />
+              </p:CVScope.UseLocalServer>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:CVScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAE4AAABTCAIAAAC+gKYPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAA8RJREFUeF7tmsuVqzAMhm8LtybqoZu0cDvIJns6yDYbSkgBQ65kBH7JxILYKAz/0WJCwhk+LOsFf16/RifqEXWiHlEn6hF1oh5RJ+oR9UHUx6u/DWBP+qxNH0J93obr359/xq4XOqhMn0DtW4I8OuptcDnR2oG+0qXNqPfG5wRrdG7XbajPS8SJNvT0vSptQh26EJJM5XbdgEqu2/zMsdeaxu26FpVc12zLIALPx5VpHeqDsuj9gZ+YHXsY1HEZ7YacyB1TGJnkqNMaejD3yIfHBdckMeoYdcNF6yMf7m70lRoJUSkCcQH26bvxAmrf0h91JUGdww+PEVSILXY5/c10ApCQvKKKzqirfNRp0ZLlQVwMJ43OqKts1KlgWMgiyeIpMjqhrjJRH4SR2oHgpV1c98dmPPna0Fl1lYc6tS9O4DUzh3s7dHGp5Ft3GZ4qEs97VLtcsEvhopkyEKwBZvDtwIdVFRKLqAAWpBBrDS5Xjz+gHxt9HaozKGKsSVdC4X1RjppaRmPXBlcyqehcTeVhiJpIGOCuUBK8ve4vQmVDTicYKYR3Si8qlH4m79moK6vao1XVVPSzYWleHHGHHa6qpiETh2rnneIRUbTVFY0jPFS8OMcD5amCid6Dmu0aoVrD6kcoLlGp8eEU6nL+TOkbUVd7XfxcoxAqVKzY+guuk0PdcnFRZl7a8KbG9qy/TH5h+gessem3nux/EYS9GHWd605yUa9LATxRlnE2zmvIoG10HEeStz1UvJFbA+Y8doFbRodC8W2g3ITe56F+SLiLeMcDfYpTnvNLoC5qRh0dcmp6mXmNdVow93hO48GoOioIIxD9aRWG7mjRzHBnSwO8ByqrALVAilKDGuzhX4RaoPtTg+o/pC0xlNK5qlwNBIUUhCWcKtMBqZSgxn0Cl2bIxBl1lFrUpK32bRWognp4Q92qY1XDpGpmsVgwmFdRx116TxebedKB6oXflVvxrXSguuG32DxVmwOXWlKQsrBUaDpjpAHVeYmi5NMAZaglh8YKUJ2YVKL0naUA1caksk899kd1SiUJKs1T6VOOdkd1X+zKyjQ4hXIK5vw5096obp2UE379ttZYri/sjSqtk8JpG1pmMKuKilX77Htx1/YelZuhZhdYVVGjq+QMX0+4TD3N1NbwPTqa0r0aXOVWEw5fvg51amWhfRWqLir6oWm4/YTB2DhYQirXmTd151VRPQWxl0oCWVUg0k6o3ii0YI/qahdU79X3oiW+q71RSzaogXZCxaizfk6/TvuFpeo6UY+n1+s/RgvwuYqHzZAAAAAASUVORK5CYII=" InformativeScreenshot="1009b3e85159a12c202c4e343f954940.jpg" Selector="&lt;html app='chrome.exe' title='Automation Exercise' /&gt;" Title="Automation Exercise" Url="[in_URL_CreateDeleteAccount]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

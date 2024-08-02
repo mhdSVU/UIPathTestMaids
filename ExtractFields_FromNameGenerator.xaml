@@ -1,0 +1,709 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_Gender="Male" this:Main.in_Country="New Zealand" this:Main.in_URL_ExtractFeilds="https://fakenamegenerator.com/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:this="clr-namespace:" xmlns:uast="clr-namespace:UiPath.Activities.System.Text;assembly=UiPath.System.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Name" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Address" Type="OutArgument(x:String)" />
+    <x:Property Name="out_PhoneNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="out_CountryCode" Type="OutArgument(x:String)" />
+    <x:Property Name="out_day" Type="OutArgument(x:String)" />
+    <x:Property Name="out_month" Type="OutArgument(x:String)" />
+    <x:Property Name="out_year" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Company" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Occupation" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Password" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Email" Type="OutArgument(x:String)" />
+    <x:Property Name="out_City" Type="OutArgument(x:String)" />
+    <x:Property Name="out_State" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ZipCode" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FirstName" Type="OutArgument(x:String)" />
+    <x:Property Name="out_LastName" Type="OutArgument(x:String)" />
+    <x:Property Name="in_Gender" Type="InArgument(x:String)" />
+    <x:Property Name="in_Country" Type="InArgument(x:String)" />
+    <x:Property Name="out_Birthday" Type="OutArgument(x:String)" />
+    <x:Property Name="in_URL_ExtractFeilds" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1239,6015</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>Microsoft.Office.Interop.Word</x:String>
+      <x:String>Emgu.CV.Aruco</x:String>
+      <x:String>Emgu.Util</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Activities.System.Text</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Word</AssemblyReference>
+      <AssemblyReference>Emgu.CV.Platform.NetStandard</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,5950" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="mailMessages" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,5477" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="688,5358" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Generate a Random Name - Fake Name Generator" sap:VirtualizedContainerService.HintSize="626,5270" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,5030" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_NameTable" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Name" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Address" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_gen_PersonalDetails" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_PhoneNumber" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_CountryCode" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Birthday" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Company" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Occupation" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_FirstNAme" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="arr_str_NameParts" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_LastName" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Password" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_gen_Address" />
+                      <Variable x:TypeArguments="x:Int32" Default="-1" Name="int_step" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_LocationDetails" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Email" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_Username" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="arr_str_LocationDetails_Parts" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_City" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_State" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_ZipCode" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="arr_str_gen_Address_lines" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="arr_str_gen_Email_Parts" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="str_" />
+                      <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="arr_Birthday_Parts" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_day" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_month" />
+                      <Variable x:TypeArguments="x:String" Name="str_gen_year" />
+                      <Variable x:TypeArguments="x:String" Name="str_API_Body" />
+                      <Variable x:TypeArguments="x:String" Name="str_userID" />
+                      <Variable x:TypeArguments="x:String" Name="out_Birthday" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate 'BODY'" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="Activate_1">
+                      <ui:Activate.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="12bcb2f9-fd89-4473-9d1d-1200e1fb06fa" InformativeScreenshot="2813d4644a80c50e553f2d51935cfea8" Selector="&lt;webctrl tag='BODY' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Activate.Target>
+                    </ui:Activate>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Gender'" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" CVScreenId="070de4ad-36f1-4ac0-9c20-4d7e515306b4" CvElementArea="413, 306, 203, 28" CvType="InputBox" DesignTimeRectangle="415, 392, 200, 25" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='gen' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='gen' tag='SELECT' type='' class='' aaname='Gender' /&gt;" Guid="2c559044-5fb1-4151-bac1-62c94a15aa9d" InformativeScreenshot="4fda14f52d055930000046d704fc06dc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="355, 360, 51, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Gender' check:innerText='Gender' /&gt;" Guid="93148caa-d48c-4f24-be3b-660d8d463144" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NSelectItem DisplayName="Select Item 'Gender'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NSelectItem_5" Item="[in_Gender]" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="3">
+                          <x:String>Random</x:String>
+                          <x:String>Male</x:String>
+                          <x:String>Female</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvElementArea="414, 358, 203, 27" CvType="InputBox" DesignTimeRectangle="415, 359, 200, 25" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='gen' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='gen' tag='SELECT' type='' class='' aaname='Gender' /&gt;" Guid="c83ccbe0-ee70-444d-9285-b64a5d423b1f" InformativeScreenshot="f82fcf73daf0cf13ccb60258db51cd9d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvTextArea="354, 361, 53, 14" CvTextArgument="Gender" CvType="Text" DesignTimeRectangle="355, 360, 51, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Gender' check:innerText='Gender' /&gt;" Guid="966cd5ad-6a32-4fd3-a039-55013b4bb5a2" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Country'" sap:VirtualizedContainerService.HintSize="530,225" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvElementArea="413, 424, 203, 27" CvType="InputBox" DesignTimeRectangle="415, 425, 200, 25" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='c' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='c' tag='SELECT' type='' class='' aaname='Country' /&gt;" Guid="22af2975-35c7-463d-a8ea-02953810c8ec" InformativeScreenshot="368ff6687e84cee7f0745f4c0880521b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvTextArea="349, 428, 58, 16" CvTextArgument="Country" CvType="Text" DesignTimeRectangle="350, 426, 56, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Country' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Country' tag='LABEL' type='' class='' check:innerText='Country' /&gt;" Guid="9700f213-e69d-43c9-bc2b-88347b320c99" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <uix:NSelectItem DisplayName="Select Item 'Country'" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NSelectItem_6" Item="[in_Country]" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="31">
+                          <x:String>Australia</x:String>
+                          <x:String>Austria</x:String>
+                          <x:String>Belgium</x:String>
+                          <x:String>Brazil</x:String>
+                          <x:String>Canada</x:String>
+                          <x:String>Cyprus (Anglicized)</x:String>
+                          <x:String>Cyprus (Greek)</x:String>
+                          <x:String>Czech Republic</x:String>
+                          <x:String>Denmark</x:String>
+                          <x:String>Estonia</x:String>
+                          <x:String>Finland</x:String>
+                          <x:String>France</x:String>
+                          <x:String>Germany</x:String>
+                          <x:String>Greenland</x:String>
+                          <x:String>Hungary</x:String>
+                          <x:String>Iceland</x:String>
+                          <x:String>Italy</x:String>
+                          <x:String>Netherlands</x:String>
+                          <x:String>New Zealand</x:String>
+                          <x:String>Norway</x:String>
+                          <x:String>Poland</x:String>
+                          <x:String>Portugal</x:String>
+                          <x:String>Slovenia</x:String>
+                          <x:String>South Africa</x:String>
+                          <x:String>Spain</x:String>
+                          <x:String>Sweden</x:String>
+                          <x:String>Switzerland</x:String>
+                          <x:String>Tunisia</x:String>
+                          <x:String>United Kingdom</x:String>
+                          <x:String>United States</x:String>
+                          <x:String>Uruguay</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvElementArea="413, 424, 203, 27" CvType="InputBox" DesignTimeRectangle="415, 425, 200, 25" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='c' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='c' tag='SELECT' type='' class='' aaname='Country' /&gt;" Guid="24b37d72-ff22-41aa-beb1-873467af6b52" InformativeScreenshot="0dba8dc5be5c04e2d74656703eccfa9b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvTextArea="349, 428, 58, 16" CvTextArgument="Country" CvType="Text" DesignTimeRectangle="350, 426, 56, 17" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Country' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Country' tag='LABEL' type='' class='' check:innerText='Country' /&gt;" Guid="29026881-b1fe-4ba5-9d0a-38ad0774d087" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                    <If Condition="[in_Country.Equals(&quot;United States&quot;)]" DisplayName="If - reset the step to match the USA case" sap:VirtualizedContainerService.HintSize="530,466" sap2010:WorkflowViewState.IdRef="If_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_55">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[int_step]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Generate'" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" CVScreenId="8f1ebf49-02e8-4eb3-b819-696e0f8bf7d3" CvElementArea="413, 456, 75, 26" CvTextArea="420, 463, 61, 12" CvTextArgument="Generate" CvType="Button" DesignTimeRectangle="415, 458, 71, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='genbtn' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='genbtn' tag='INPUT' type='submit' class='button red' aaname='Generate' check:text='Generate' /&gt;" Guid="6754595d-b32e-4ef7-bcd9-29d61cfd9312" InformativeScreenshot="8bd008b5199d122f021bfa9475878b1f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NClick>
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_NameTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='New column 0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NExtractData_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/gen-male-us-us.php" DesignTimeRectangle="481, 463, 580, 1269" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='info' parentid='details' tag='DIV' /&gt;" Guid="6b57fed7-fba6-4fc1-aaae-05380df0098e" InformativeScreenshot="f7e0f67faac509820bc4754661d79ff6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Male, American, United States - Fake Name Generator' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NExtractData>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_56">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Name]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_NameTable.Rows(0)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_57">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_gen_Name]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_NameTable.Rows(0)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <uast:SplitText DisplayName="Split Text" sap:VirtualizedContainerService.HintSize="530,223" sap2010:WorkflowViewState.IdRef="SplitText_16" Result="[str_gen_FirstNAme]" Results="[arr_str_NameParts]" Separator="Space" SeparatorKey="Space" Source="[str_gen_Name]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_58">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_FirstName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[arr_str_NameParts(0)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_59">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_LastName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[arr_str_NameParts(2)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_gen_Address]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Address'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/gen-male-us-us.php" DesignTimeRectangle="511, 473, 540, 59" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='address' parentid='details' tag='DIV' /&gt;" Guid="c7570384-f599-4da4-bbbb-73f81ec4413e" InformativeScreenshot="70a0922a5c5394f69703ece6777953f1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Male, American, United States - Fake Name Generator' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NExtractData>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_60">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Address]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_Address.Rows(0)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_73">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_gen_Address]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_Address.Rows(0)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <uast:SplitText DisplayName="Split Text" sap:VirtualizedContainerService.HintSize="530,223" sap2010:WorkflowViewState.IdRef="SplitText_17" Results="[arr_str_gen_Address_lines]" Separator="NewLine" SeparatorKey="NewLine" Source="[str_gen_Address]" />
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_gen_PersonalDetails]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Details'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='dl' /&gt;&lt;webctrl tag='dd' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,189" sap2010:WorkflowViewState.IdRef="NExtractData_10" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7ed10abb-0df8-4960-9c3b-0b6fee51ed16" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.fakenamegenerator.com/" DesignTimeRectangle="511, -695, 540, 1256" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='extra' parentid='details' tag='DIV' /&gt;" Guid="6352314e-c16f-41fc-a4dc-c6a5fe137596" InformativeScreenshot="a4f6e3d1406f6e676955f0e2019f5b49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                    </uix:NExtractData>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_61">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_PhoneNumber]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(3+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_62">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_CountryCode]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(4+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_74">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Birthday]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(5+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_76">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_gen_Birthday]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(5+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Assign>
+                    <uast:SplitText DisplayName="Split Text" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="SplitText_18" Results="[arr_Birthday_Parts]" Separator="Space" SeparatorKey="Space" Source="[str_gen_Birthday]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uast:SplitText>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_64">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_month]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[arr_Birthday_Parts(0)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_65">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_day]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Strings.Replace(arr_Birthday_Parts(1),",","")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_66">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_year]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[arr_Birthday_Parts(2)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_67">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Company]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(16+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_68">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Occupation]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(17+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_69">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[str_gen_Email]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(8+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uast:SplitText DisplayName="Split Text" sap:VirtualizedContainerService.HintSize="530,223" sap2010:WorkflowViewState.IdRef="SplitText_19" Results="[arr_str_gen_Email_Parts]" Separator="This is" SeparatorKey="Custom" Source="[str_gen_Email]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_70">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Email]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[arr_str_gen_Email_Parts(0)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_71">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Name]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(9+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="530,107" sap2010:WorkflowViewState.IdRef="Assign_72">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Password]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[dt_gen_PersonalDetails.Rows(10+int_step)(0).ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH3wUcFjkjSdtABwAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJZSURBVEhL7ZbNb9JwGMc9LEoLPynQMrPJyfuSGQ1/gHFuNKKXZdH9DR486nT/wLTiX2C8Gu+e1ADjxUWCQBkQylsBx4tTNFmKdr48oxf4tWsLk4ux+ZzK830+pf097e/UPmKmCi74hJgOYlo2em9MIAJBiGMNRwTwcxsxNWq2MOvh3Z6M25M2AZRBMUQgCHHMgQtEwlG+6vsajvRi8V7UNLH4t+1IeYmFuJ6gixjBQuVXb/+U5d9jHr9kOb+2DnFoMtwTFxQs9sxEAojwa+sQNxakV29NV5CZSDDWLdIQNILhxL0H/Mbmrha5jc3S/Yf5hcui1WnwkI8TZLe4VzPkzpmzCS2SFnvWYq9aXS39ZaojKD0OvCcoEWYKMR9VwElobTxoOoLioyfvTqMy6aiTTnEUONMknW0bjd19BbMC4dnz4MKlD4vejIrsRW9x0Vt1e+BtMfk/kA8OpHa73+58V9Pp9MW6sMTWVGMMmBXoH4eSxLM3S6o1Cvw1QYq9UZyqIH1CAZyRJUmTQ6n/40svt+KvECcQCC9evr7Gxlf8Oz6chM/PL18vnL/QtLkmf8i5Le7NjDU1mFiMnIUSCKphc8GgDXdTMCsoc4EkQTXR0XdRE7h29eUDZgUVLpAiKHgfDNeb4b/AkH9PAOO+q7WrqHFPeYKCfdVwvRlwQZVwFK4s778NdkPbnVAY6IbCnyPRyp27RdIB63243gwjApiUPUQX7e4kPR+j5yIDovRcgp7PO841jvlm6TMiAKBFC9HQq3aES6E+2N4q44rVG4ILFJS5x8BqTIGYP0HPVXjjInEIAAAAAElFTkSuQmCC" InformativeScreenshot="6894554d04e9c8d6fcebed062e0e2f65.jpg" Selector="&lt;html app='chrome.exe' title='Generate a Random Name - Fake Name Generator' /&gt;" Title="Generate a Random Name - Fake Name Generator" Url="[in_URL_ExtractFeilds]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelProcessScopeX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ueab:ExcelProcessScopeX>
+    <ui:CommentOut DisplayName="Comment Out - for debugging purpose" sap:VirtualizedContainerService.HintSize="722,385" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,283" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create_Delete_Account - Invoke Workflow File (CreateDeleteAccount.xaml)" sap:VirtualizedContainerService.HintSize="354,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Create_Delete_Account.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Usename">[out_Name]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Email">[out_Email]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Gender">[in_Gender]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Password">[out_Password]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Day">[out_day]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Month">[out_month]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Year">[out_year]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[out_FirstNAme]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[out_LastName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Company">[out_Company]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Address">[out_Address]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_State">[out_State]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_City">[out_City]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ZipCode">[out_ZipCode]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Phone">[out_PhoneNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_URL_CreateDeleteAccount">https://automationexercise.com/</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
