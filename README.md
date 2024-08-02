@@ -1,5 +1,4 @@
 # Important Notes:
-================
 
 1. **VPN-related Activities Skipped**: All requested VPN-related activities were skipped because the website is inaccessible due to VPN being illegal in the UAE.
 
@@ -12,7 +11,6 @@
 4. **Monitor the Workflow**: During execution, you don't need to close the message boxes that might appear while the workflow is running, as they have all been configured to close automatically after a few seconds.
 
 # Run Steps:
-==========
 
 **Before running the workflow, ensure there is at least one email in the inbox with the following properties**:
 - **Unread**
